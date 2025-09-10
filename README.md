@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💰 Expense Tracker
 
-## Getting Started
+A full-stack Expense Tracker application built with **Next.js (frontend)**, **Flask + SQLAlchemy (backend)**, and **PostgreSQL (database)**.  
+It allows users to register, log in, and manage their personal expenses with authentication support.
 
-First, run the development server:
+---
 
+## 🚀 Tech Stack
+
+### Frontend
+- [Next.js 13+ (App Router)](https://nextjs.org/)
+- TypeScript + React Hooks
+- TailwindCSS (for styling)
+- JWT authentication
+
+### Backend
+- [Flask](https://flask.palletsprojects.com/)
+- Flask-SQLAlchemy (ORM)
+- Flask-Migrate (database migrations)
+- Flask-CORS (CORS handling)
+- JWT for authentication
+
+### Database
+- PostgreSQL
+
+---
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repo
 ```bash
+git clone https://github.com/yourusername/Expense-Tracker-project.git
+cd Expense-Tracker-project
+
+
+Backend Setup
+
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+
+
+Create .env file in backend/
+DATABASE_URL=postgresql://user:password@localhost:5432/expense_db
+SECRET_KEY=your_secret_key
+
+
+Run migrations:
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+Start server:
+python app.py
+
+
+
+
+3. Frontend Setup
+cd frontend
+npm install
+
+
+Create .env.local in frontend/:
+
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+
+
+Run frontend:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Frontend runs at: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔑 Features
 
-## Learn More
+User registration (email + password, JWT auth)
 
-To learn more about Next.js, take a look at the following resources:
+User login/logout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Token storage in localStorage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Expense CRUD (to be added)
 
-## Deploy on Vercel
+Dashboard for tracking expenses (coming soon)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🗄 Database Schema
+Users
+Table users {
+  id          int [pk, increment]
+  email       varchar(120) [unique, not null]
+  password    varchar(200) [null]   // nullable for Google login
+  provider    varchar(50) [default: 'email']
+  google_id   varchar(200) [unique]
+  created_at  timestamp [default: now()]
+}
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+(Expenses & Budgets tables will be added later)
+
+🛠 Roadmap
+
+✅ Email/password auth
+
+⏳ Google OAuth
+
+⏳ Expense & budget management
+
+⏳ Reports & analytics dashboard
+
+⏳ Deployment (Render + Vercel)
+
+🤝 Contributing
+
+Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to change.
+
+📜 License
+
+MIT License © 2025 Your Name
+
+
+
+
