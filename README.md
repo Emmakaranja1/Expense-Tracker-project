@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💸 Expense Tracker (Full Stack)
 
-## Getting Started
+A full-stack expense tracker application built with **Next.js** on the frontend and **Node.js/Express** (or Flask/Python) on the backend, with a PostgreSQL (or MongoDB) database.  
+This app helps users manage personal finances by tracking expenses, categories, and budgets.
 
-First, run the development server:
 
+
+
+
+## 🚀 Features
+
+- ✅ User authentication (register & login)
+- ✅ Add, edit, and delete expenses
+- ✅ Categorize expenses (Food, Rent, Transport, etc.)
+- ✅ Monthly/weekly expense summary
+- ✅ Responsive UI (Next.js + Tailwind CSS / CSS Modules)
+- ✅ REST API backend with JWT authentication
+- ✅ Database storage for persistence (PostgreSQL or MongoDB)
+- ✅ Charts & analytics for spending insights
+
+
+
+## 🛠️ Tech Stack
+
+### Frontend
+- [Next.js](https://nextjs.org/) (React framework)
+- Context API / Redux Toolkit (state management)
+- Tailwind CSS or CSS Modules (styling)
+- Chart.js / Recharts (data visualization)
+
+### Backend
+- Node.js + Express (or Flask + Python)
+- REST API with JWT authentication
+- PostgreSQL (via Prisma / Sequelize / SQLAlchemy) or MongoDB (via Mongoose)
+
+
+
+## 📂 Project Structure
+
+Expense-Tracker-project/
+├── backend/ # Express or Flask backend
+│ ├── src/
+│ │ ├── models/ # Database models
+│ │ ├── routes/ # API routes
+│ │ ├── controllers/ # Logic for routes
+│ │ └── server.js # App entry point
+│ └── package.json
+│
+├── frontend/ # Next.js frontend
+│ ├── app/ # App Router pages
+│ ├── components/ # Reusable components
+│ ├── context/ # State management
+│ └── package.json
+│
+├── README.md
+
+
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
 ```bash
+git clone https://github.com/Emmakaranja1/Expense-Tracker-project.git
+cd Expense-Tracker-project
+2. Frontend Setup
+
+
+
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit 👉 http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Backend Setup
+If using Node.js + Express:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+cd backend
+npm install
+npm run dev
+Runs API server at 👉 http://localhost:5000
 
-To learn more about Next.js, take a look at the following resources:
+If using Flask (Python):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy code
+cd backend
+pip install -r requirements.txt
+flask run
+Runs API server at 👉 http://127.0.0.1:5000
